@@ -1,17 +1,17 @@
-﻿iso3,country,ncd,smoking,alcohol
-CK,Cook Islands,75.2,72.7,30.3
-FJ,Fiji,113.8,80.5,10.74
-KI,Kiribati,133,107.4,2.22
-MH,Marshall Islands,#N/A,92.3,#N/A
-NR,Nauru,89.7,143.1,8.37
-NU,Niue,18.5,46.2,27.77
-PF,French Polynesia,#N/A,32,#N/A
-PG,Papua New Guinea,85.5,116.1,3.35
-PW,Palau,#N/A,48.3,7.9
-SB,Solomon Islands,121.3,110.1,4.33
-TO,Tonga,81,92.4,1.1
-TV,Tuvalu,#N/A,96.7,3.74
-VU,Vanuatu,109.8,53.4,6.14
-WS,Samoa,96.7,61.4,7.02
-FM,Micronesia (Federated States of),#N/A,#N/A,6.07
-NC,New Caledonia,#N/A,#N/A,6.82
+﻿iso3,country,ncd,smoking,alcohol,description
+CK,Cook Islands,75.2,72.7,30.3,Description about Cook Islands
+FJ,Fiji,113.8,80.5,10.74,Description about Fiji
+KI,Kiribati,133,107.4,2.22,Description about Kiribati
+MH,Marshall Islands,#N/A,92.3,#N/A,Description about Marshall Islands
+NR,Nauru,89.7,143.1,8.37,Description about Nauru
+NU,Niue,18.5,46.2,27.77,Description about Niue
+PF,French Polynesia,#N/A,32,#N/A,Description about French Polynesia
+PG,Papua New Guinea,85.5,116.1,3.35,Description about Papua New Guinea
+PW,Palau,#N/A,48.3,7.9,Description about Palau
+SB,Solomon Islands,121.3,110.1,4.33,Description about Solomon Islands
+TO,Tonga,81,92.4,1.1,Description about Tonga
+TV,Tuvalu,#N/A,96.7,3.74,Description about Tuvalu
+VU,Vanuatu,109.8,53.4,6.14,Description about Vanuatu
+WS,Samoa,96.7,61.4,7.02,Description about Samoa
+FM,Micronesia (Federated States of),#N/A,#N/A,6.07,Description about Micronesia (Federated States of)
+NC,New Caledonia,#N/A,#N/A,6.82,Description about New Caledonia
