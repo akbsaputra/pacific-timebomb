@@ -1,17 +1,17 @@
-﻿iso3,country,ncd,smoking,alcohol,description,image
-CK,Cook Islands,75.2,72.7,30.3,Description about Cook Islands,https://cdn.who.int/media/images/default-source/western-pacific-(wpro)/countries/cook-islands/20250219-img_2909_1920px.jpg?sfvrsn=502205ad_5
-FJ,Fiji,113.8,80.5,10.74,Description about Fiji,https://cdn.who.int/media/images/default-source/western-pacific-(wpro)/countries/cook-islands/20250219-img_2909_1920px.jpg?sfvrsn=502205ad_5
-KI,Kiribati,133,107.4,2.22,Description about Kiribati,https://cdn.who.int/media/images/default-source/western-pacific-(wpro)/countries/cook-islands/20250219-img_2909_1920px.jpg?sfvrsn=502205ad_5
-MH,Marshall Islands,#N/A,92.3,#N/A,Description about Marshall Islands,https://cdn.who.int/media/images/default-source/western-pacific-(wpro)/countries/cook-islands/20250219-img_2909_1920px.jpg?sfvrsn=502205ad_5
-NR,Nauru,89.7,143.1,8.37,Description about Nauru,https://cdn.who.int/media/images/default-source/western-pacific-(wpro)/countries/cook-islands/20250219-img_2909_1920px.jpg?sfvrsn=502205ad_5
-NU,Niue,18.5,46.2,27.77,Description about Niue,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
-PF,French Polynesia,#N/A,32,#N/A,Description about French Polynesia,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
-PG,Papua New Guinea,85.5,116.1,3.35,Description about Papua New Guinea,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
-PW,Palau,#N/A,48.3,7.9,Description about Palau,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
-SB,Solomon Islands,121.3,110.1,4.33,Description about Solomon Islands,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
-TO,Tonga,81,92.4,1.1,Description about Tonga,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
-TV,Tuvalu,#N/A,96.7,3.74,Description about Tuvalu,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
-VU,Vanuatu,109.8,53.4,6.14,Description about Vanuatu,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
-WS,Samoa,96.7,61.4,7.02,Description about Samoa,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
-FM,Micronesia (Federated States of),#N/A,#N/A,6.07,Description about Micronesia (Federated States of),https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
-NC,New Caledonia,#N/A,#N/A,6.82,Description about New Caledonia,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn
+﻿iso3,country,ncd,smoking,alcohol,description,image,flag
+CK,Cook Islands,75.2,72.7,30.3,Description about Cook Islands,https://cdn.who.int/media/images/default-source/western-pacific-(wpro)/countries/cook-islands/20250219-img_2909_1920px.jpg?sfvrsn=502205ad_5,/assets/cook-islands.png
+FJ,Fiji,113.8,80.5,10.74,Description about Fiji,https://cdn.who.int/media/images/default-source/western-pacific-(wpro)/countries/cook-islands/20250219-img_2909_1920px.jpg?sfvrsn=502205ad_5,/assets/cook-islands.png
+KI,Kiribati,133,107.4,2.22,Description about Kiribati,https://cdn.who.int/media/images/default-source/western-pacific-(wpro)/countries/cook-islands/20250219-img_2909_1920px.jpg?sfvrsn=502205ad_5,/assets/cook-islands.png
+MH,Marshall Islands,#N/A,92.3,#N/A,Description about Marshall Islands,https://cdn.who.int/media/images/default-source/western-pacific-(wpro)/countries/cook-islands/20250219-img_2909_1920px.jpg?sfvrsn=502205ad_5,/assets/cook-islands.png
+NR,Nauru,89.7,143.1,8.37,Description about Nauru,https://cdn.who.int/media/images/default-source/western-pacific-(wpro)/countries/cook-islands/20250219-img_2909_1920px.jpg?sfvrsn=502205ad_5,/assets/cook-islands.png
+NU,Niue,18.5,46.2,27.77,Description about Niue,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png
+PF,French Polynesia,#N/A,32,#N/A,Description about French Polynesia,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png
+PG,Papua New Guinea,85.5,116.1,3.35,Description about Papua New Guinea,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png
+PW,Palau,#N/A,48.3,7.9,Description about Palau,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png
+SB,Solomon Islands,121.3,110.1,4.33,Description about Solomon Islands,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png
+TO,Tonga,81,92.4,1.1,Description about Tonga,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png
+TV,Tuvalu,#N/A,96.7,3.74,Description about Tuvalu,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png
+VU,Vanuatu,109.8,53.4,6.14,Description about Vanuatu,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png
+WS,Samoa,96.7,61.4,7.02,Description about Samoa,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png
+FM,Micronesia (Federated States of),#N/A,#N/A,6.07,Description about Micronesia (Federated States of),https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png
+NC,New Caledonia,#N/A,#N/A,6.82,Description about New Caledonia,https://samoa.un.org/sites/default/files/styles/hero_header_2xl_1x/public/2024-02/niueCOP.jpg?itok=_ftFA8yn,/assets/cook-islands.png

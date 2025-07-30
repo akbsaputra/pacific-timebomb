@@ -43,7 +43,7 @@ body {
 
 @media (max-width: 768px) {
     #dot-plot-section {
-        padding-bottom: 40rem; /* More space on mobile for stacked charts */
+        padding-bottom: 40rem; /* More space on mobile for vertical charts */
     }
 }
 
@@ -86,15 +86,11 @@ body {
 }
 
 .chart-step {
-    min-height: 60vh; /* Enough height to ensure proper scrolling transitions */
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 1.5rem;
     background-color: rgba(17, 24, 39, 0.6); /* More transparent */
     backdrop-filter: blur(8px);
     border-radius: 0.75rem;
-    margin-bottom: 4rem; /* More space between steps */
+    margin-bottom: 90vh; /* Increased spacing to create a "full screen" scroll between steps */
     border: 1px solid rgba(55, 65, 81, 0.3);
 }
 
@@ -103,11 +99,9 @@ body {
     .chart-step {
         background-color: rgba(17, 24, 39, 0.75); /* Less transparent on mobile for readability */
         backdrop-filter: blur(12px);
-        margin: 1rem;
-        margin-bottom: 3rem; /* Space between steps on mobile */
+        margin: 2rem 1rem 50vh 1rem; /* Adjusted vertical margin for mobile */
         border: 1px solid rgba(55, 65, 81, 0.5);
         padding: 1rem;
-        min-height: 50vh; /* Smaller height on mobile but still enough for scrolling */
     }
 }
 
@@ -164,7 +158,7 @@ body {
 
 #info-panel {
     position: absolute;
-    bottom: -1rem; /* Closer to the chart */
+    bottom: 5rem; /* Moves the panel up to be closer to the chart */
     left: 0;
     width: 100%;
     max-width: 100vw; /* Ensure it doesn't exceed viewport */
@@ -183,7 +177,7 @@ body {
 
 @media (max-width: 768px) {
     #info-panel {
-        bottom: -8rem; /* Further down on mobile to avoid covering chart */
+        bottom: -8rem; /* Much lower on mobile to clear the chart */
     }
 }
 
