@@ -85,6 +85,10 @@ body {
     height: 80vh; /* 80% of viewport height */
 }
 
+#step-1 {
+    margin-top: 70vh; /* Pushes the first step's box down to the bottom of the viewport */
+}
+
 .chart-step {
     padding: 1.5rem;
     background-color: rgba(17, 24, 39, 0.6); /* More transparent */
@@ -126,20 +130,15 @@ body {
 }
 
 .dot-plot-dot {
-    transition: cx 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smoother transition */
-    stroke: #60A5FA;
-    stroke-width: 2px;
+    transition: filter 0.2s ease-out;
 }
 
 .dot-plot-dot:hover {
-    fill: #FBBF24;
-    stroke: #FBBF24;
+    filter: drop-shadow(0px 0px 8px rgba(245, 158, 11, 0.8));
 }
 
 .dot-plot-dot.selected {
-    fill: #F59E0B; /* amber-500 */
-    stroke: #F59E0B;
-    stroke-width: 3px;
+    filter: drop-shadow(0px 0px 8px rgba(245, 158, 11, 0.8));
 }
 
 #tooltip {

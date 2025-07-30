@@ -182,7 +182,7 @@ window.addEventListener('load', () => {
             const tooltip = d3.select("#tooltip");
 
             function updateDotPlot(metric) {
-                const data = ncdLatest.filter(d => d[metric] && d[metric] !== '#N/A' && !isNaN(parseFloat(d[metric])));
+                const data = ncdLatest.filter(d => d[metric] && d[metric] !== '#N/A' && !isNaN(parseFloat(d[metric])) && d.flag && d.flag !== '#N/A');
                 const domain = d3.extent(data, d => +d[metric]);
                 x.domain(domain).nice();
                 
@@ -200,8 +200,14 @@ window.addEventListener('load', () => {
                     .attr("class", "text-xs text-gray-400")
                     .text(d => Math.round(d * 10) / 10);
 
+                const imageSize = 24;
                 const dots = svg.selectAll(".dot-plot-dot").data(data, d => d.iso3);
-                dots.enter().append("circle").attr("class", "dot dot-plot-dot").attr("r", 8).style("fill", "#3B82F6")
+                
+                dots.enter().append("image")
+                    .attr("class", "dot dot-plot-dot")
+                    .attr("href", d => d.flag)
+                    .attr("width", imageSize)
+                    .attr("height", imageSize)
                     .on("mouseover", function(event, d) {
                         tooltip.style("opacity", 1).html(`<strong>${d.country}</strong><br/>${metric.toUpperCase()}: ${parseFloat(d[metric]).toFixed(1)}`);
                     })
@@ -217,11 +223,12 @@ window.addEventListener('load', () => {
                         d3.select(event.currentTarget).classed("selected", true);
                         showTimelinePanel(d.iso3);
                     })
-                    .attr("cy", height)
-                    .attr("cx", d => x(+d[metric]))
+                    .attr("y", height - (imageSize / 2))
+                    .attr("x", d => x(+d[metric]) - (imageSize / 2))
                     .merge(dots)
                     .transition().duration(800).ease(d3.easeCubicOut)
-                    .attr("cx", d => x(+d[metric]));
+                    .attr("x", d => x(+d[metric]) - (imageSize / 2));
+
                 dots.exit().remove();
             }
 
