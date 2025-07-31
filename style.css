@@ -5,6 +5,11 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrollbars */
 }
 
+a {
+    text-decoration: underline !important;
+    color: lightyellow !important ;
+}
+
 /* Style for the cover section */
 .cover-section {
     height: 100vh;
