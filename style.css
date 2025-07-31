@@ -10,6 +10,10 @@ a {
     color: lightyellow !important ;
 }
 
+strong {
+    color: yellow !important;
+}
+
 /* Style for the cover section */
 .cover-section {
     height: 100vh;
