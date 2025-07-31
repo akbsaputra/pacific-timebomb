@@ -1,8 +1,8 @@
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #111827; /* Dark background for the whole page */
-    color: #E5E7EB; /* Light gray text */
-    overflow-x: hidden; /* Prevent horizontal scrollbars */
+    background-color: #111827; 
+    color: #E5E7EB; 
+    overflow-x: hidden; 
 }
 
 a {
@@ -14,7 +14,6 @@ strong {
     color: yellow !important;
 }
 
-/* Style for the cover section */
 .cover-section {
     height: 100vh;
     display: flex;
@@ -38,15 +37,15 @@ strong {
 }
 
 .content-section {
-    max-width: 48rem; /* 768px */
+    max-width: 48rem; 
     margin-left: auto;
     margin-right: auto;
-    padding: 4rem 1.5rem; /* Reduced vertical padding */
+    padding: 4rem 1.5rem; 
 }
 
 #dot-plot-section {
-    max-width: 72rem; /* Make the dot plot section wider */
-    padding-bottom: 2rem; /* Reduced padding */
+    max-width: 72rem; 
+    padding-bottom: 2rem; 
     margin-bottom: 2rem;
 }
 
@@ -56,17 +55,10 @@ strong {
     }
 }
 
-/* Keep content sections from getting too short on large screens */
-.story-section {
-     /* Removed min-height for seamless vertical gaps */
-}
-
-/* Reduce space between story sections */
 .story-section + .story-section {
     padding-top: 2rem;
 }
 
-/* Transition classes for scroll animations */
 .scroll-reveal {
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
@@ -91,54 +83,50 @@ strong {
     transform: translateX(0) translateY(0);
 }
 
-/* Styles for the chart sections */
 .chart-container {
-    position: -webkit-sticky; /* For Safari */
+    position: -webkit-sticky; 
     position: sticky;
-    top: 10vh; /* Stick 10% from the top of the viewport */
-    height: 80vh; /* 80% of viewport height */
+    top: 10vh; 
+    height: 80vh; 
 }
 
 #step-1 {
-    margin-top: 70vh; /* Pushes the first step's box down to the bottom of the viewport */
+    margin-top: 70vh; 
 }
 
 .chart-step {
     padding: 1.5rem;
-    background-color: rgba(17, 24, 39, 0.6); /* More transparent */
+    background-color: rgba(17, 24, 39, 0.6); 
     backdrop-filter: blur(8px);
     border-radius: 0.75rem;
-    margin-bottom: 90vh; /* Increased spacing to create a "full screen" scroll between steps */
+    margin-bottom: 90vh; 
     border: 1px solid rgba(55, 65, 81, 0.3);
 }
 
-/* Mobile-specific styles for chart steps */
 @media (max-width: 768px) {
     .chart-step {
-        background-color: rgba(17, 24, 39, 0.75); /* Less transparent on mobile for readability */
+        background-color: rgba(17, 24, 39, 0.75); 
         backdrop-filter: blur(12px);
-        margin: 2rem 1rem 50vh 1rem; /* Adjusted vertical margin for mobile */
+        margin: 2rem 1rem 50vh 1rem; 
         border: 1px solid rgba(55, 65, 81, 0.5);
         padding: 1rem;
     }
 }
 
 .chart-step.active p {
-    color: #F9FAFB; /* Make text for active step brighter */
+    color: #F9FAFB; 
 }
 
-/* Add more horizontal space for scatterplot section */
 .scatterplot-section {
-    max-width: 85rem; /* Increased max-width */
+    max-width: 85rem;
     margin: 0 auto;
     padding: 4rem 2rem;
 }
 
 .scatterplot-section .grid {
-    gap: 4rem; /* Increased gap between chart and text */
+    gap: 4rem;
 }
 
-/* --- STYLES FOR DOT PLOT & TIMELINE --- */
 .dot {
     cursor: pointer;
 }
@@ -156,8 +144,8 @@ strong {
 }
 
 #tooltip {
-    position: fixed; /* Use fixed to prevent layout shifts */
-    background-color: rgba(17, 24, 39, 0.8); /* gray-900 with opacity */
+    position: fixed; 
+    background-color: rgba(17, 24, 39, 0.8); 
     color: white;
     padding: 8px 12px;
     border-radius: 6px;
@@ -183,7 +171,7 @@ strong {
 }
 
 #info-panel.visible {
-    max-height: 2000px; /* Large value to allow content to expand */
+    max-height: 2000px; 
     opacity: 1;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -195,15 +183,15 @@ strong {
 
 .timeline-charts-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Force exactly 3 columns */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 1rem;
     width: 100%;
-    padding: 0 1.5rem 1.5rem 1.5rem; /* Add padding only to the grid container */
+    padding: 0 1.5rem 1.5rem 1.5rem; 
 }
 
 @media (max-width: 768px) {
     .timeline-charts-grid {
-        grid-template-columns: 1fr; /* Single column on mobile for better readability */
+        grid-template-columns: 1fr; 
         gap: 1rem;
         padding: 0 1rem 1rem 1rem;
     }
@@ -211,29 +199,25 @@ strong {
 
 .timeline-chart-container {
     margin-bottom: 0.5rem;
-    min-width: 0; /* Allow charts to shrink */
+    min-width: 0; 
 }
 
-/* Reduce paragraph spacing */
 .prose p + p {
-    margin-top: 1rem !important; /* Reduced from default */
+    margin-top: 1rem !important; 
 }
 
-/* Specific spacing reductions */
 .story-section .prose p:not(:first-child) {
     margin-top: 1rem;
 }
 
 .story-section .grid {
-    margin-top: 3rem; /* Reduced from 6rem */
+    margin-top: 3rem; 
 }
 
-/* Reduce space before scatterplot */
 .scatterplot-section {
-    margin-top: 1rem; /* Further reduced spacing */
+    margin-top: 1rem; 
 }
 
-/* Country image container styles */
 .country-image-container {
     position: relative;
     overflow: hidden;
