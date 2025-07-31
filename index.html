@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Story: A Scrolling Journey</title>
+    <title>The Silent Time Bomb: The Pacific’s Hidden Health Crisis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
@@ -11,122 +11,154 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-900 text-gray-200">
-
-    <!-- 1. Cover Section -->
     <section id="cover" class="cover-section">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzY1a3Q3dGZkZjhqc2Z0b3R0NXN4dG5qM3ZqN2R4b2FjYjB3Z2o4eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Vz84a3aB92S3Q1m2wa/giphy.gif" 
-             alt="Abstract network animation" 
-             class="background-gif"
-             onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000000/FFFFFF?text=Fallback+Image';">
+        <video autoplay loop muted playsinline 
+               class="background-gif">
+            <source src="assets/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="z-10">
-            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight">THE DATA STORY</h1>
-            <p class="mt-4 text-xl md:text-2xl text-gray-300">An Interactive Scrolling Experience</p>
-            <p class="mt-4 text-md md:text-lg text-gray-400 max-w-2xl mx-auto">Follow along as we explore global health trends through an animated, scroll-driven narrative.</p>
+            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight">The Silent Time Bomb</h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-300">The Pacific’s Hidden Health Crisis</p>
+            <p class="mt-4 text-base max-w-2xl mx-auto">A data story uncovering the region’s hidden health crisis—and why people-centred development is key to achieving the vision of Blue Pacific 2050.</p>
+            <p class="mt-4 text-base max-w-2xl mx-auto text-gray-400">by Akbar Saputra</p>
         </div>
     </section>
 
-    <!-- 2. First Two Paragraphs -->
     <section class="content-section story-section">
-        <div class="prose prose-invert max-w-none text-lg text-center">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Phasellus euismod, nisi eu consectetur efficitur, nunc nisi aliquet massa, nec lacinia sapien sem vitae eros. Vivamus in urna id libero tincidunt tristique. Curabitur vel semper eros. Integer nec ante id justo ullamcorper facilisis. Sed vitae justo nec ante facilisis tincidunt. Nullam nec nunc nec nunc.</p>
+        <div class="prose prose-invert max-w-none text-base text-center">
+            <p>Across the Pacific Islands, a crisis is unfolding quietly but relentlessly. Non-communicable diseases (NCDs) are now the leading cause of death in most Pacific nations, accounting for over 70% of all mortality in some areas. While disasters like cyclones and sea-level rise draw global attention, it is these silent threats that are steadily dismantling communities from within. The NCD burden is not just a health issue—it’s a development emergency that strikes at the heart of everyday life. This dataviz sheds light on the scale, drivers, and disparities of the Pacific's NCD epidemic—through a regional lens, a personal lens, and a call for action.</p>
+            <p><br><br><br><br><br><br></p>
+            <div class="my-12">
+                <img src="assets/blue-pacific.jpg" 
+                    alt="Blue Pacific 2050"
+                    class="block mx-auto max-w-xl">
+            </div>
+            <p>The <strong>2050 Strategy for the Blue Pacific Continent</strong> lays out seven key areas of long-term regional cooperation: political leadership, people-centred development, peace and security, resource management, climate change, ocean and environment, and technology and connectivity. Among these, people-centred development is perhaps the most directly threatened by the NCD crisis. Development means nothing if it doesn’t protect and uplift the people it serves. Yet today, rising rates of diabetes, hypertension, and heart disease are stripping away years of healthy life, increasing household medical costs, and pushing health systems to their limits.</p>
+            <p>By combining regional health data with global comparisons, this dataviz highlights patterns in tobacco use, alcohol consumption, and preventable NCDs across Pacific countries. It lets users zoom into individual country profiles, see where interventions are working, and spot alarming gaps. It’s a tool for reflection—and for rethinking how public health, policy, and cultural change can come together. If we are to honour the Blue Pacific vision, we must ensure that its people not only survive, but thrive.</p>
+            <p><br><br><br><br><br><br></p>
         </div>
     </section>
 
-    <!-- 3. Third Paragraph & 4. Split Section -->
     <section class="content-section story-section">
-        <div class="prose prose-invert max-w-none text-lg text-center">
-            <p>Suspendisse potenti. In hac habitasse platea dictumst. Donec vel elit at leo commodo placerat. Maecenas eget arcu vitae justo consequat tincidunt. Nam nec ante sed odio scelerisque ultrices. Fusce id semper est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">What is NCD?</h2>
+            <div class="prose prose-invert max-w-3xl mx-auto text-base">
+                 <p>Non-communicable diseases (NCDs), also known as chronic diseases, tend to be of long duration and are the result of a combination of genetic, physiological, environmental and behavioural factors. They are the leading cause of death worldwide. Some of diseases considered as NCDs are:</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16 text-center">
+            <div id="icon-1" class="flex flex-col items-center scroll-reveal hidden-bottom">
+                <div class="bg-sky-500/20 p-4 rounded-full mb-4">
+                    <img src="assets/icons/heart-disease.png" alt="Heart Disease">
+                </div>
+                <h3 class="text-xl font-bold text-white">Heart Diseases</h3>
+                <p class="mt-2">Heart disease remains the single largest killer across Pacific Island countries, accounting for roughly one in three premature deaths as elevated blood pressure, smoking, and salt-heavy diets converge.</p>
+            </div>
+            <div id="icon-2" class="flex flex-col items-center scroll-reveal hidden-bottom">
+                 <div class="bg-emerald-500/20 p-4 rounded-full mb-4">
+                    <img src="assets/icons/diabetes.png" alt="Diabetes">
+                </div>
+                <h3 class="text-xl font-bold text-white">Diabetes</h3>
+                <p class="mt-2">Diabetes rates are among the highest in the world here—places like Nauru see adult prevalence well above 30 %, turning everyday foods and limited screening into silent, long-term threats.</p>
+            </div>
+            <div id="icon-3" class="flex flex-col items-center scroll-reveal hidden-bottom">
+                 <div class="bg-rose-500/20 p-4 rounded-full mb-4">
+                    <img src="assets/icons/cancer.png" alt="Cancer">
+                </div>
+                <h3 class="text-xl font-bold text-white">Cancer</h3>
+                <p class="mt-2">Cancer, once considered rarer in low-income settings, is rising fast in the Pacific; late detection means that by the time most patients seek treatment, over half of cases are already at an advanced stage.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section story-section">
+        <div class="prose prose-invert max-w-none text-base text-center">
+            <p>So what’s fuelling this crisis? While the causes of NCDs are complex and overlapping, two of the most powerful and preventable drivers across the Pacific are tobacco use and alcohol consumption. These behaviors are deeply rooted in social norms, policy gaps, and uneven access to health education—but the data tells a clear story.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mt-16">
             <div id="left-part" class="scroll-reveal hidden-left flex flex-col items-center text-center md:items-start md:text-left">
                 <div class="bg-blue-500/20 p-4 rounded-full mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <img src="assets/icons/smoking.png" alt="Smoking">
                 </div>
-                <h3 class="text-2xl font-bold text-white">Insight from the Left</h3>
-                <p class="mt-2 text-gray-400">As you scroll, this element gracefully appears. It represents the initial discovery, the first piece of the puzzle. It fades in from the side, drawing your attention.</p>
+                <h3 class="text-2xl font-bold text-white">Smoking</h3>
+                <p class="mt-2">In several Pacific Island countries, over 40% of adults report regular tobacco use—among the highest rates in the world. In Kiribati, nearly two out of every three men are smokers, contributing to soaring rates of cardiovascular disease and respiratory illness.</p>
             </div>
             <div id="right-part" class="scroll-reveal hidden-right flex flex-col items-center text-center md:items-start md:text-left">
                 <div class="bg-purple-500/20 p-4 rounded-full mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-400"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    <img src="assets/icons/alcohol.png" alt="Alcohol">
                 </div>
-                <h3 class="text-2xl font-bold text-white">Conclusion from the Right</h3>
-                <p class="mt-2 text-gray-400">Following the first insight, this second element emerges, completing the picture. This demonstrates the cause-and-effect relationship in our story.</p>
+                <h3 class="text-2xl font-bold text-white">Alcohol</h3>
+                <p class="mt-2">Excessive alcohol use is also widespread and often under-addressed. In countries like the Marshall Islands and Palau, over a quarter of adults engage in heavy episodic drinking, increasing risks for liver disease, injuries, and violent death.</p>
             </div>
         </div>
     </section>
 
-    <!-- 5. Final Paragraph -->
     <section class="content-section story-section">
-        <div class="prose prose-invert max-w-none text-lg text-center">
-            <p>Donec ut elit eu elit consequat auctor. Morbi in ipsum id magna iaculis gravida. Integer nec libero nec justo consequat tincidunt. Nam nec ante sed odio scelerisque ultrices. Fusce id semper est. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <div class="prose prose-invert max-w-none text-base text-center">
+            <p>Let’s take a closer look: how are smoking and alcohol use actually related to NCDs? Using global data, we can explore whether higher levels of these risk factors correlate with increased rates of non-communicable disease. And more importantly, where do Pacific Island countries sit in that global landscape?</p>
         </div>
     </section>
 
-    <!-- 6. UNIFIED CHART SECTION -->
     <section class="scatterplot-section">
         <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
             <div class="md:col-span-3 chart-container">
                 <div id="scatterplot" class="w-full h-full rounded-lg p-4"></div>
             </div>
             <div class="md:col-span-2">
-                <!-- Smoking Steps -->
                 <div id="step-1" class="chart-step">
-                    <div class="prose prose-invert max-w-none text-lg text-gray-400">
+                    <div class="prose prose-invert max-w-none text-base">
                         <h3 class="text-2xl font-bold text-white">The Impact of Smoking</h3>
-                        <p>This chart plots countries based on their smoking rate against NCD mortality. Each dot is a country. We begin by examining the raw data to see if any initial patterns emerge from the distribution.</p>
+                        <p>When we plot countries by smoking prevalence and their share of deaths from NCDs, a pattern begins to emerge. Higher smoking rates often go hand-in-hand with higher NCD burdens, although not perfectly. This is a global scatter: each dot represents a country—big and small, rich and poor—all facing some version of this challenge.</p>
                     </div>
                 </div>
                 <div id="step-2" class="chart-step">
-                    <div class="prose prose-invert max-w-none text-lg text-gray-400">
-                        <h3 class="text-2xl font-bold text-white">Visualizing the Correlation</h3>
-                        <p>Adding a trendline reveals a positive correlation. Generally, countries with higher smoking rates tend to have a higher percentage of deaths from non-communicable diseases. This highlights a significant public health relationship.</p>
+                    <div class="prose prose-invert max-w-none text-base ">
+                        <h3 class="text-2xl font-bold text-white">Risk Slope</h3>
+                        <p>A trendline helps make the story clearer. While there are outliers, the upward slope is unmistakable: as smoking increases, so does the national toll of NCDs. This correlation doesn’t imply smoking is the only factor—but it’s a strong signal that tobacco control matters in reducing preventable deaths.</p>
                     </div>
                 </div>
                 <div id="step-3" class="chart-step">
-                    <div class="prose prose-invert max-w-none text-lg text-gray-400">
+                    <div class="prose prose-invert max-w-none text-base">
                         <h3 class="text-2xl font-bold text-white">A Pacific Perspective on Smoking</h3>
-                        <p>Highlighting the Pacific island nations shows that many have high smoking rates. Their position relative to the trendline can help us understand regional health dynamics and the specific challenges these nations face.</p>
+                        <p>Now, let’s highlight the Pacific. Countries like Kiribati and Papua New Guinea stand out as high-smoking, high-NCD nations. Others like Tonga or Fiji cluster closer to the middle. By comparing their positions to the rest of the world, we see both shared struggles and opportunities for targeted action.</p>
                     </div>
                 </div>
-                <!-- Alcohol Steps -->
                 <div id="step-4" class="chart-step">
-                    <div class="prose prose-invert max-w-none text-lg text-gray-400">
+                    <div class="prose prose-invert max-w-none text-base">
                         <h3 class="text-2xl font-bold text-white">Turning to Alcohol's Impact</h3>
-                        <p>Now, watch as the chart transitions. Each dot moves to a new position representing that country's alcohol consumption. This provides a new lens through which to view global health, allowing us to compare the impact of a different lifestyle factor.</p>
+                        <p>This chart shows a similar relationship between alcohol use and NCD share. While more scattered than smoking, there’s still a visible upward trend. Heavy drinking doesn’t just lead to liver problems—it’s linked to heart disease, cancer, and injuries that raise national death rates.</p>
                     </div>
                 </div>
                 <div id="step-5" class="chart-step">
-                    <div class="prose prose-invert max-w-none text-lg text-gray-400">
+                    <div class="prose prose-invert max-w-none text-base">
                         <h3 class="text-2xl font-bold text-white">The Alcohol-NCD Trend</h3>
-                        <p>The trendline for alcohol also suggests a positive, though perhaps more varied, correlation. It indicates that higher alcohol consumption is generally associated with higher NCD mortality rates across the globe.</p>
+                        <p>Adding a trendline reveals that countries with higher alcohol use tend to experience higher NCD mortality. The gradient isn’t as steep as smoking, but it’s still meaningful—especially in regions with cultural or economic exposure to alcohol. Again, this is not about individual choices alone. It’s about public health systems, norms, and protections.</p>
                     </div>
                 </div>
                 <div id="step-6" class="chart-step">
-                    <div class="prose prose-invert max-w-none text-lg text-gray-400">
-                        <h3 class="text-2xl font-bold text-white">A Pacific Perspective on Alcohol</h3>
-                        <p>Focusing on the Pacific nations again, we see different patterns. Some have low alcohol consumption but high NCD rates, suggesting that for this region, other factors like diet may play a more critical role than alcohol in NCD outcomes.</p>
+                    <div class="prose prose-invert max-w-none text-base">
+                        <h3 class="text-2xl font-bold text-white">One Stand-Out, Many Moderates</h3>
+                        <p>ighlighted Pacific dots cluster on the left half of the x-axis; Cook Islands is the lone outlier near 13 L, while Palau, Fiji, and Samoa hover around 5–6 L, and Tonga and Kiribati sit near 2 L. The key insight: high NCD burdens can persist even where alcohol consumption is only mid-pack.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. Final Paragraph -->
     <section class="content-section story-section">
-        <div class="prose prose-invert max-w-none text-lg text-center">
-            <p>In conclusion, this visual exploration demonstrates the complex interplay of lifestyle factors and health outcomes across the globe. While broad trends are evident, regional variations highlight the need for nuanced public health strategies. Data storytelling allows us to uncover these layers, transforming raw numbers into a compelling narrative that invites further inquiry and understanding.</p>
+        <div class="prose prose-invert max-w-none text-base text-center">
+            <p>From the two scatterplots a clear hierarchy of risks emerges. Smoking shows a steep, almost linear climb: every 10-point jump in adult smoking prevalence is tied to roughly 4–6 extra NCD deaths per 100 000 people. Alcohol, by contrast, has a gentler slope—most Pacific nations drink less than half the volume consumed in Europe—yet their NCD mortality still hovers well above 60 %. That mismatch tells us the region’s health systems, food environments, and screening capacity amplify even moderate behavioural risks. Put simply, the Pacific sits above the global trend-lines because the same cigarette or drink delivers a heavier blow when primary care is thin, diets are ultra-processed, and treatment arrives late. The policy signal is unambiguous: cutting tobacco use is the fastest, highest-leverage move, while modest reductions in harmful drinking can unlock outsized health gains once basic care and prevention catch up.</p>
         </div>
     </section>
 
-    <!-- 8. DOT PLOT SECTION -->
     <section id="dot-plot-section" class="content-section">
-        <div class="prose prose-invert max-w-none text-lg text-center mb-8">
-            <h2 class="text-4xl font-bold text-white">Pacific Health Indicators</h2>
-            <p class="mt-4">Compare Pacific nations by different health metrics. Click a dot to see the historical trend for that country in the side panel.</p>
+        <div class="prose prose-invert max-w-none text-base text-center mb-8">
+            <h2 class="text-4xl font-bold text-white">Turning the Tide: Are We Moving Fast Enough?</h2>
+            <p class="mt-4">The next view reveals movement, not just position. Each arrow begins at a country’s 2010 record and points to its 2023 value: the tail shows where the nation started, the head shows where it stands now. The horizontal axis plots the risk factor you choose—toggle between Smoking prevalence and Alcohol litres per adult—while the vertical axis holds the share of deaths caused by NCDs. Long arrows signal rapid change; green arrows point downwards (improvement), red arrows upwards (worsening). Hover to read exact numbers, click a country label to keep its path highlighted as you switch factors, and use the legend to isolate Pacific nations or reset the frame. In a single glance, you can judge who is bending the curve and who is drifting off course.</p>
         </div>
         
-        <!-- Radio Buttons for Metric Selection -->
         <div class="flex justify-center items-center space-x-8 my-8">
             <label class="flex items-center text-white cursor-pointer">
                 <input type="radio" name="metric-radio" value="ncd" class="form-radio h-5 w-5 text-blue-500 bg-gray-700 border-gray-600 focus:ring-blue-500" checked>
@@ -142,30 +174,29 @@
             </label>
         </div>
 
-        <!-- Container for the Dot Plot -->
         <div id="dot-plot-container" class="w-full"></div>
         
-        <!-- Tooltip and Info Panel -->
         <div id="tooltip"></div>
-        <div id="info-panel">
+    </section>
+
+    <div id="info-panel">
+        <div class="relative">
             <button id="close-panel" class="absolute top-2 right-2 z-10 text-white hover:text-gray-300 text-3xl leading-none bg-black bg-opacity-70 hover:bg-opacity-90 rounded-full w-10 h-10 flex items-center justify-center transition-all duration-200">&times;</button>
             <div id="panel-content" class="text-gray-300">
                 <p class="px-6 pt-6">Click on a country to see details.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- 9. NEW CONCLUSION SECTION -->
+
     <section class="content-section story-section">
-        <div class="prose prose-invert max-w-none text-lg text-center">
+        <div class="prose prose-invert max-w-none text-base text-center">
             <h2 class="text-4xl font-bold text-white mb-8">Conclusion</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>The scatterplots made one thing plain: higher risk factors translate into heavier NCD burdens, but the relationship is steeper for smoking than for alcohol, and Pacific countries often lie above the world trend even when their drinking levels are merely mid-range. The arrow chart deepens that picture by adding motion. It shows Fiji, Palau and Tonga inching their trajectories downward over the last decade—proof that decisive tobacco taxes, clearer food labels and stronger primary-care screening do pay off. It also exposes Kiribati, Nauru and the Cook Islands slipping in the opposite direction, reminding us that progress is neither automatic nor evenly shared.</p>
             
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <p>Taken together, the visuals deliver five intertwined lessons. First, People-Centred Development—one of the seven pillars of Blue Pacific 2050—begins with safeguarding health; without it, every other aspiration, from climate resilience to ocean stewardship, is built on sand. Second, policy leverage matters: each ten-percentage-point cut in smoking prevalence would avert roughly four to six additional NCD deaths per 100 000 people, freeing scarce budgets for education and adaptation. Third, the region’s generally moderate alcohol figures show that large gains are possible with relatively small behaviour shifts; most islands do not need to halve consumption, only to nudge it below a clear safety line. Fourth, the data gaps that shorten some arrows are themselves a warning—reliable surveillance is the cheapest early-warning system a health ministry can buy. Finally, the diversity within the Pacific is an asset: islands that are already turning their arrows green offer blueprints the whole region can adapt.</p>
             
-            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-            
-            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+            <p>The message is as simple as it is urgent. The time bomb is ticking, but its fuse can still be shortened. By acting now—taxing tobacco, curbing harmful drinking, strengthening front-line clinics and sharing hard-won lessons—Pacific leaders can convert a silent crisis into a story of collective resilience, exactly the future imagined in the 2050 Strategy for the Blue Pacific Continent.</p>
         </div>
     </section>
     

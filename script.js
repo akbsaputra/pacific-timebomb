@@ -22,11 +22,15 @@ window.addEventListener('load', () => {
 
     setupObserver('left-part', 'visible', 'hidden-left', 0.4);
     setupObserver('right-part', 'visible', 'hidden-right', 0.4);
+    setupObserver('icon-1', 'visible', 'hidden-bottom', 0.3);
+    setupObserver('icon-2', 'visible', 'hidden-bottom', 0.3);
+    setupObserver('icon-3', 'visible', 'hidden-bottom', 0.3);
+
 
     // --- SCRIPT FOR UNIFIED SCROLLYTELLING CHART SECTION ---
     async function runScrollyChart() {
-        const smokingDataUrl = 'https://raw.githubusercontent.com/akbsaputra/pacific-timebomb/main/data/smoking.csv';
-        const alcoholDataUrl = 'https://raw.githubusercontent.com/akbsaputra/pacific-timebomb/main/data/alcohol.csv';
+        const smokingDataUrl = 'data/smoking.csv';
+        const alcoholDataUrl = 'data/alcohol.csv';
 
         try {
             const [smokingData, alcoholData] = await Promise.all([
@@ -66,8 +70,8 @@ window.addEventListener('load', () => {
             const xAxis = svg.append("g").attr("class", "x-axis").attr("transform", `translate(0, ${height})`);
             const yAxis = svg.append("g").attr("class", "y-axis");
 
-            const xLabel = svg.append("text").attr("class", "x-label").attr("text-anchor", "middle").attr("x", width / 2).attr("y", height + margin.top + 15).style("fill", "#9CA3AF");
-            svg.append("text").attr("text-anchor", "middle").attr("transform", "rotate(-90)").attr("y", -margin.left + 20).attr("x", -height / 2).style("fill", "#9CA3AF").text("NCD Mortality Rate (%)");
+            const xLabel = svg.append("text").attr("class", "x-label").attr("text-anchor", "middle").attr("x", width / 2).attr("y", height + margin.top + 15).style("fill", "white");
+            svg.append("text").attr("text-anchor", "middle").attr("transform", "rotate(-90)").attr("y", -margin.left + 20).attr("x", -height / 2).style("fill", "white").text("NCD Mortality Rate (%)");
             
             const dots = svg.append('g').selectAll("circle").data(mergedData, d => d.iso2c).join("circle").attr("class", "dot").attr("r", 5).style("fill", "#60A5FA").style("opacity", 0.7).style("stroke", "white").style("stroke-width", 0.5);
 
@@ -83,6 +87,12 @@ window.addEventListener('load', () => {
                 yAxis.transition().duration(1000).call(d3.axisLeft(y));
                 xLabel.text(label);
                 
+                // Style the axes after they are drawn/updated
+                xAxis.selectAll("path, line").style("stroke", "white");
+                xAxis.selectAll("text").style("fill", "white");
+                yAxis.selectAll("path, line").style("stroke", "white");
+                yAxis.selectAll("text").style("fill", "white");
+
                 dots.transition("position").duration(1000).attr("cx", d => x(d[xVar])).attr("cy", d => y(d[yVar]));
             }
 
@@ -101,7 +111,7 @@ window.addEventListener('load', () => {
                     const x0 = d3.min(relevantData, d => d[xVar]), x1 = d3.max(relevantData, d => d[xVar]);
                     trendline.enter().append("line").attr("class", "trendline").style("stroke", "#FBBF24").style("stroke-width", 3).attr("x1", x(x0)).attr("y1", y(slope * x0 + intercept)).attr("x2", x(x0)).attr("y2", y(slope * x0 + intercept)).merge(trendline).transition().duration(1000).style("opacity", 1).attr("x1", x(x0)).attr("y1", y(slope * x0 + intercept)).attr("x2", x(x1)).attr("y2", y(slope * x1 + intercept));
                 }
-                dots.transition("appearance").duration(500).style("fill", d => (d.is_pacific && state === 'pacific') ? "#F472B6" : "#60A5FA").style("r", d => (d.is_pacific && state === 'pacific') ? 8 : 5);
+                dots.transition("appearance").duration(500).style("fill", d => (d.is_pacific && state === 'pacific') ? "#ebf472" : "#60A5FA").style("r", d => (d.is_pacific && state === 'pacific') ? 8 : 5);
             }
 
             const steps = d3.selectAll(".chart-step");
@@ -138,10 +148,10 @@ window.addEventListener('load', () => {
     }
 
     async function runDotPlot() {
-        const ncdLatestUrl = 'https://raw.githubusercontent.com/akbsaputra/pacific-timebomb/main/data/ncd.csv';
-        const ncdTimelineUrl = 'https://raw.githubusercontent.com/akbsaputra/pacific-timebomb/main/data/ncd_timeline.csv';
-        const smokingTimelineUrl = 'https://raw.githubusercontent.com/akbsaputra/pacific-timebomb/main/data/smoking_timeline.csv';
-        const alcoholTimelineUrl = 'https://raw.githubusercontent.com/akbsaputra/pacific-timebomb/main/data/alcohol_timeline.csv';
+        const ncdLatestUrl = 'data/ncd.csv';
+        const ncdTimelineUrl = 'data/ncd_timeline.csv';
+        const smokingTimelineUrl = 'data/smoking_timeline.csv';
+        const alcoholTimelineUrl = 'data/alcohol_timeline.csv';
 
         try {
             const [ncdLatest, ncdTimeline, smokingTimeline, alcoholTimeline] = await Promise.all([
@@ -173,12 +183,12 @@ window.addEventListener('load', () => {
 
             const svg = d3.select("#dot-plot-container").append("svg").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom).append("g").attr("transform", `translate(${margin.left},${margin.top})`);
             
-            svg.append("defs").append("marker").attr("id", "arrowhead").attr("viewBox", "-0 -5 10 10").attr("refX", 5).attr("refY", 0).attr("orient", "auto").attr("markerWidth", 8).attr("markerHeight", 8).attr("xoverflow", "visible").append("svg:path").attr("d", "M 0,-5 L 10 ,0 L 0,5").attr("fill", "#9CA3AF");
+            svg.append("defs").append("marker").attr("id", "arrowhead").attr("viewBox", "-0 -5 10 10").attr("refX", 5).attr("refY", 0).attr("orient", "auto").attr("markerWidth", 8).attr("markerHeight", 8).attr("xoverflow", "visible").append("svg:path").attr("d", "M 0,-5 L 10 ,0 L 0,5").attr("fill", "white");
 
             const x = d3.scaleLinear().range([0, width]);
-            const xAxisLine = svg.append("line").attr("class", "x-axis-line").attr("y1", height).attr("y2", height).attr("stroke", "#9CA3AF").attr("marker-end", "url(#arrowhead)");
+            const xAxisLine = svg.append("line").attr("class", "x-axis-line").attr("y1", height).attr("y2", height).attr("stroke", "white").attr("marker-end", "url(#arrowhead)");
             const xAxisLabels = svg.append("g").attr("class", "x-axis-labels");
-            const xLabel = svg.append("text").attr("class", "x-label text-xs text-gray-400").attr("text-anchor", "middle").attr("x", width / 2).attr("y", height + 35);
+            const xLabel = svg.append("text").attr("class", "x-label text-xs").attr("text-anchor", "middle").attr("x", width / 2).attr("y", height + 50).style("fill", "white");
             const tooltip = d3.select("#tooltip");
 
             function updateDotPlot(metric) {
@@ -197,10 +207,11 @@ window.addEventListener('load', () => {
                     .attr("x", d => x(d))
                     .attr("y", height + 20)
                     .attr("text-anchor", "middle")
-                    .attr("class", "text-xs text-gray-400")
+                    .attr("class", "text-xs")
+                    .style("fill", "white")
                     .text(d => Math.round(d * 10) / 10);
 
-                const imageSize = 24;
+                const imageSize = 30;
                 const dots = svg.selectAll(".dot-plot-dot").data(data, d => d.iso3);
                 
                 dots.enter().append("image")
@@ -222,6 +233,10 @@ window.addEventListener('load', () => {
                         svg.selectAll(".dot-plot-dot").classed("selected", false);
                         d3.select(event.currentTarget).classed("selected", true);
                         showTimelinePanel(d.iso3);
+                        // Scroll to the panel after a short delay
+                        setTimeout(() => {
+                            document.getElementById('info-panel').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 300);
                     })
                     .attr("y", height - (imageSize / 2))
                     .attr("x", d => x(+d[metric]) - (imageSize / 2))
@@ -232,7 +247,7 @@ window.addEventListener('load', () => {
                 dots.exit().remove();
             }
 
-            const infoPanel = d3.select("#info-panel"), panelTitle = d3.select("#panel-title"), panelContent = d3.select("#panel-content"), closePanelButton = d3.select("#close-panel");
+            const infoPanel = d3.select("#info-panel"), panelContent = d3.select("#panel-content"), closePanelButton = d3.select("#close-panel");
 
             function showTimelinePanel(iso3) {
                 const countryData = ncdDataMap.get(iso3);
@@ -244,20 +259,17 @@ window.addEventListener('load', () => {
                     imageContainer.append("img")
                         .attr("src", countryData.image)
                         .attr("alt", countryData.country)
-                        .attr("class", "w-full h-32 object-cover rounded-t-lg");
+                        .attr("class", "w-full h-32 object-cover object-top rounded-t-lg");
                     
-                    // Add gradient overlay
-                    const gradientOverlay = imageContainer.append("div")
-                        .attr("class", "absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-800 rounded-t-lg");
+                    imageContainer.append("div")
+                        .attr("class", "absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent rounded-t-lg");
                     
-                    // Add country name over the image with left margin
                     imageContainer.append("div")
                         .attr("class", "absolute bottom-2 left-6 right-4")
                         .append("h2")
                         .attr("class", "text-2xl font-bold text-white drop-shadow-lg")
                         .text(countryData.country);
                 } else {
-                    // If no image, add country name at top with padding
                     panelContent.append("div").attr("class", "px-6 pt-6 mb-4")
                         .append("h2")
                         .attr("class", "text-2xl font-bold text-white")
@@ -265,12 +277,11 @@ window.addEventListener('load', () => {
                 }
 
                 const description = countryData.description || "No description available.";
-                panelContent.append("p").attr("class", "text-gray-300 mb-4 px-6").text(description);
+                panelContent.append("div").attr("class", "prose prose-invert max-w-none text-base px-6").html(description);
 
-                const chartsContainer = panelContent.append("div").attr("class", "timeline-charts-grid");
+                const chartsContainer = panelContent.append("div").attr("class", "timeline-charts-grid mt-6");
                 const metrics = ['ncd', 'smoking', 'alcohol'];
                 
-                // Use a timeout to ensure DOM elements are rendered
                 setTimeout(() => {
                     metrics.forEach(metric => {
                         const container = chartsContainer.append("div").attr("class", "timeline-chart-container");
@@ -278,8 +289,7 @@ window.addEventListener('load', () => {
                         
                         container.append("h3").attr("class", "text-md font-bold text-white capitalize mb-2").text(`${metric} Timeline`);
                         
-                        // Use smaller chart widths to prevent overlap, with mobile adjustment
-                        const chartWidth = window.innerWidth > 768 ? 180 : window.innerWidth - 80; // Mobile: full width minus padding
+                        const chartWidth = window.innerWidth > 768 ? 180 : window.innerWidth - 80;
                         const lineMargin = { top: 5, right: 10, bottom: 30, left: 35 };
                         const panelWidth = chartWidth - lineMargin.left - lineMargin.right;
                         const panelHeight = 120 - lineMargin.top - lineMargin.bottom;
@@ -312,7 +322,7 @@ window.addEventListener('load', () => {
                                 .style("fill", colorMap[metric]);
                         }
                     });
-                }, 100); // Small delay to ensure DOM is ready
+                }, 100); 
                 
                 infoPanel.classed("visible", true);
             }
@@ -327,6 +337,12 @@ window.addEventListener('load', () => {
                 svg.selectAll(".dot-plot-dot").classed("selected", false);
             });
             updateDotPlot("ncd");
+
+            // Add a scroll listener to hide the tooltip
+            d3.select(window).on("scroll.tooltip", () => {
+                tooltip.style("opacity", 0);
+            });
+
         } catch (error) {
             console.error("Error loading dot plot data:", error);
             document.getElementById('dot-plot-container').innerHTML = `<p class="text-red-400 p-4">Could not load chart data.</p>`;
