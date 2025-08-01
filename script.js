@@ -73,7 +73,7 @@ window.addEventListener('load', () => {
             const xLabel = svg.append("text").attr("class", "x-label").attr("text-anchor", "middle").attr("x", width / 2).attr("y", height + margin.top + 15).style("fill", "white");
             svg.append("text").attr("text-anchor", "middle").attr("transform", "rotate(-90)").attr("y", -margin.left + 20).attr("x", -height / 2).style("fill", "white").text("NCD Mortality Rate (%)");
             
-            const dots = svg.append('g').selectAll("circle").data(mergedData, d => d.iso2c).join("circle").attr("class", "dot").attr("r", 5).style("fill", "#60A5FA").style("opacity", 0.7).style("stroke", "white").style("stroke-width", 0.5);
+            const dots = svg.append('g').selectAll("circle").data(mergedData, d => d.iso2c).join("circle").attr("class", "dot").attr("r", 5).style("fill", "#60A5FA").style("opacity", 0.9).style("stroke", "white").style("stroke-width", 0.5);
 
             function updateChart(mode) {
                 const xVar = mode === 'smoking' ? 'smoking' : 'alcohol';
@@ -188,7 +188,7 @@ window.addEventListener('load', () => {
             const x = d3.scaleLinear().range([0, width]);
             const xAxisLine = svg.append("line").attr("class", "x-axis-line").attr("y1", height).attr("y2", height).attr("stroke", "white").attr("marker-end", "url(#arrowhead)");
             const xAxisLabels = svg.append("g").attr("class", "x-axis-labels");
-            const xLabel = svg.append("text").attr("class", "x-label text-xs").attr("text-anchor", "middle").attr("x", width / 2).attr("y", height + 50).style("fill", "white");
+            const xLabel = svg.append("text").attr("class", "x-label text-xs").attr("text-anchor", "middle").attr("x", width / 2).attr("y", height + 45).style("fill", "white");
             const tooltip = d3.select("#tooltip");
 
             function updateDotPlot(metric) {
@@ -205,7 +205,7 @@ window.addEventListener('load', () => {
                 xAxisLabels.selectAll("text").data(tickValues).join("text")
                     .transition().duration(800)
                     .attr("x", d => x(d))
-                    .attr("y", height + 20)
+                    .attr("y", height + 30)
                     .attr("text-anchor", "middle")
                     .attr("class", "text-xs")
                     .style("fill", "white")
@@ -213,22 +213,12 @@ window.addEventListener('load', () => {
 
                 const imageSize = 30;
                 const dots = svg.selectAll(".dot-plot-dot").data(data, d => d.iso3);
-                
+
                 dots.enter().append("image")
                     .attr("class", "dot dot-plot-dot")
                     .attr("href", d => d.flag)
                     .attr("width", imageSize)
                     .attr("height", imageSize)
-                    .on("mouseover", function(event, d) {
-                        tooltip.style("opacity", 1).html(`<strong>${d.country}</strong><br/>${metric.toUpperCase()}: ${parseFloat(d[metric]).toFixed(1)}`);
-                    })
-                    .on("mousemove", function(event, d) {
-                        tooltip.style("left", (event.clientX + 15) + "px")
-                               .style("top", (event.clientY - 28) + "px");
-                    })
-                    .on("mouseout", function(event, d) {
-                        tooltip.style("opacity", 0);
-                    })
                     .on("click", (event, d) => {
                         svg.selectAll(".dot-plot-dot").classed("selected", false);
                         d3.select(event.currentTarget).classed("selected", true);
@@ -239,8 +229,22 @@ window.addEventListener('load', () => {
                         }, 300);
                     })
                     .attr("y", height - (imageSize / 2))
-                    .attr("x", d => x(+d[metric]) - (imageSize / 2))
-                    .merge(dots)
+                    .attr("x", d => x(+d[metric]) - (imageSize / 2));
+
+                // Update all dots (both new and existing) with current event handlers
+                svg.selectAll(".dot-plot-dot")
+                    .on("mouseover", function(event, d) {
+                        const unitMap = { ncd: 'deaths per 100k', smoking: 'deaths per 100k', alcohol: 'litres per capita' };
+                        const unit = unitMap[metric] || '';
+                        tooltip.style("opacity", 1).html(`<strong>${d.country}</strong><br/>${metric.toUpperCase()}: ${parseFloat(d[metric]).toFixed(1)} ${unit}`);
+                    })
+                    .on("mousemove", function(event, d) {
+                        tooltip.style("left", (event.clientX + 15) + "px")
+                            .style("top", (event.clientY - 28) + "px");
+                    })
+                    .on("mouseout", function(event, d) {
+                        tooltip.style("opacity", 0);
+                    })
                     .transition().duration(800).ease(d3.easeCubicOut)
                     .attr("x", d => x(+d[metric]) - (imageSize / 2));
 
